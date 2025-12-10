@@ -42,7 +42,7 @@ export const resumeData: ResumeData = {
   contact: {
     phone: "+1-818-912-0166",
     email: "abbasengineer01@gmail.com",
-    linkedin: "linkedin.com/in/abbas-engineer-b53799125",
+    linkedin: "www.linkedin.com/in/abbas-engineer-b53799125/",
     github: "github.com/abbasengineer",
   },
   experience: [
