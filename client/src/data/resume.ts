@@ -12,6 +12,7 @@ export interface Project {
   name: string;
   role: string;
   description: string;
+  url?: string;
 }
 
 export interface Education {
@@ -88,18 +89,19 @@ export const resumeData: ResumeData = {
       role: "Founder & Builder",
       description:
         "Architected and developed a consumer-facing platform enabling users to evaluate and rank financial decisions (investing, debt management, insurance, housing) through interactive daily scenarios. Engineered sophisticated scoring algorithms, percentile ranking systems, and risk-grading mechanisms that provide instant, actionable feedback on decision quality and risk assessment capabilities. Launched with open access architecture and implemented optional user accounts featuring progress tracking, advanced analytics dashboards, and engagement streaks. Tech: React, TypeScript, Node.js, Supabase/Postgres, Authentication, Analytics.",
+      url: "https://moneyrank.onrender.com",
     },
     {
       name: "Elite Express",
       role: "Founder & Developer",
       description:
-        "Designed and built a mobile app for a car wash business, supporting subscriptions, location services, and promotions.",
+        "Architected and developed a React Native mobile application that digitized a car wash business's operations, enabling customers to directly interact, purchase services, and manage their accounts. Transformed a fully manual process into an automated platform, resulting in a 30% increase in user engagement and improved customer experience. Implemented comprehensive features including subscription management, promotional campaigns, push notifications, and an admin dashboard for business operations. The platform streamlined the purchase flow and account management, significantly reducing friction and increasing ease of use for both customers and business operators.",
     },
     {
       name: "QueuedUp",
       role: "Product Manager & Engineer",
       description:
-        "Led product design and development of a networking app for college STEM students, managing a 4-person team using ReactJS, Redux, and Firebase.",
+        "Led product design and development of a localized social networking platform for UCSC students, creating a Reddit-style community where users could create posts, threads, and join campus-specific groups to seek advice, share knowledge, and connect with peers. Managed a 4-person cross-functional team using Agile methodologies, overseeing feature prioritization, technical architecture decisions, and sprint planning. Built core functionality including user authentication, real-time post creation, threaded discussions, group management, and content moderation using ReactJS, Redux, and Firebase. The platform fostered a vibrant campus community by enabling students to discover resources, get academic and career advice, and build connections within the UCSC ecosystem.",
     },
   ],
   education: [

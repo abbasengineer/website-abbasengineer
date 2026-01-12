@@ -152,17 +152,36 @@ export default function Resume() {
             <div className="grid gap-6">
               {resumeData.projects.map((project, index) => (
                 <motion.div variants={itemVariants} key={index}>
-                  <Card className="bg-white/5 border-white/10 hover:border-primary/50 transition-colors">
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-lg font-bold text-white">{project.name}</h3>
-                        <Badge variant="outline" className="text-xs border-primary/30 text-primary">{project.role}</Badge>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {project.description}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="block">
+                      <Card className="bg-white/5 border-white/10 hover:border-primary/50 transition-colors cursor-pointer group">
+                        <CardContent className="p-6">
+                          <div className="flex justify-between items-start mb-2">
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">{project.name}</h3>
+                              <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                            </div>
+                            <Badge variant="outline" className="text-xs border-primary/30 text-primary">{project.role}</Badge>
+                          </div>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {project.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </a>
+                  ) : (
+                    <Card className="bg-white/5 border-white/10 hover:border-primary/50 transition-colors">
+                      <CardContent className="p-6">
+                        <div className="flex justify-between items-start mb-2">
+                          <h3 className="text-lg font-bold text-white">{project.name}</h3>
+                          <Badge variant="outline" className="text-xs border-primary/30 text-primary">{project.role}</Badge>
+                        </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {project.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -228,7 +247,7 @@ export default function Resume() {
                   <p className="text-xs text-muted-foreground mt-1">Download the original document</p>
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-white font-bold" asChild>
-                  <a href="/attached_assets/Abbas_Engineer_Resume_Cloudflare_1765343324059.pdf" download target="_blank">
+                  <a href="/Abbas_Engineer_Resume.pdf" download="Abbas_Engineer_Resume.pdf">
                     Download PDF
                   </a>
                 </Button>
