@@ -163,7 +163,7 @@ export default function Resume() {
                             </div>
                             <Badge variant="outline" className="text-xs border-primary/30 text-primary">{project.role}</Badge>
                           </div>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
+                          <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
                             {project.description}
                           </p>
                         </CardContent>
@@ -176,7 +176,7 @@ export default function Resume() {
                           <h3 className="text-lg font-bold text-white">{project.name}</h3>
                           <Badge variant="outline" className="text-xs border-primary/30 text-primary">{project.role}</Badge>
                         </div>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
+                        <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
                           {project.description}
                         </p>
                       </CardContent>

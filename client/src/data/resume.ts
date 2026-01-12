@@ -88,20 +88,20 @@ export const resumeData: ResumeData = {
       name: "MoneyRank",
       role: "Founder & Builder",
       description:
-        "Architected and developed a consumer-facing platform enabling users to evaluate and rank financial decisions (investing, debt management, insurance, housing) through interactive daily scenarios. Engineered sophisticated scoring algorithms, percentile ranking systems, and risk-grading mechanisms that provide instant, actionable feedback on decision quality and risk assessment capabilities. Launched with open access architecture and implemented optional user accounts featuring progress tracking, advanced analytics dashboards, and engagement streaks. Tech: React, TypeScript, Node.js, Supabase/Postgres, Authentication, Analytics.",
+        "• Consumer finance decision platform enabling users to evaluate and rank financial decisions (investing, debt, insurance, housing) through daily scenarios\n• Engineered scoring algorithms, percentile rankings, and risk-grading systems for instant feedback\n• Launched with open access and optional accounts featuring progress tracking, analytics dashboards, and engagement streaks\n• Tech: React, TypeScript, Node.js, Supabase/Postgres, Authentication, Analytics",
       url: "https://moneyrank.onrender.com",
     },
     {
       name: "Elite Express",
       role: "Founder & Developer",
       description:
-        "Architected and developed a React Native mobile application that digitized a car wash business's operations, enabling customers to directly interact, purchase services, and manage their accounts. Transformed a fully manual process into an automated platform, resulting in a 30% increase in user engagement and improved customer experience. Implemented comprehensive features including subscription management, promotional campaigns, push notifications, and an admin dashboard for business operations. The platform streamlined the purchase flow and account management, significantly reducing friction and increasing ease of use for both customers and business operators.",
+        "• React Native app that digitized car wash operations, transforming manual processes into automated platform\n• Enabled direct customer interaction, service purchases, and account management\n• Implemented subscriptions, promotions, push notifications, and admin dashboard\n• Resulted in 30% increase in user engagement",
     },
     {
       name: "QueuedUp",
       role: "Product Manager & Engineer",
       description:
-        "Led product design and development of a localized social networking platform for UCSC students, creating a Reddit-style community where users could create posts, threads, and join campus-specific groups to seek advice, share knowledge, and connect with peers. Managed a 4-person cross-functional team using Agile methodologies, overseeing feature prioritization, technical architecture decisions, and sprint planning. Built core functionality including user authentication, real-time post creation, threaded discussions, group management, and content moderation using ReactJS, Redux, and Firebase. The platform fostered a vibrant campus community by enabling students to discover resources, get academic and career advice, and build connections within the UCSC ecosystem.",
+        "• Reddit-style social networking platform for UCSC students with posts, threads, and campus-specific groups\n• Managed 4-person cross-functional team using Agile, overseeing feature prioritization and technical architecture\n• Built authentication, real-time posts, threaded discussions, and group management\n• Tech: ReactJS, Redux, Firebase",
     },
   ],
   education: [
