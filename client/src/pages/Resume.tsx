@@ -163,9 +163,13 @@ export default function Resume() {
                             </div>
                             <Badge variant="outline" className="text-xs border-primary/30 text-primary">{project.role}</Badge>
                           </div>
-                          <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
+                          <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line mb-4">
                             {project.description}
                           </p>
+                          <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                            <span>Check it Out</span>
+                            <span>→</span>
+                          </div>
                         </CardContent>
                       </Card>
                     </a>
