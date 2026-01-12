@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { path: "/", label: "Resume", icon: FileText },
-    { path: "/cloudflare-fit", label: "Why Cloudflare?", icon: Cloud },
+    { path: "/why-me", label: "Why Me?", icon: Cloud },
   ];
 
   return (

@@ -84,6 +84,12 @@ export const resumeData: ResumeData = {
   ],
   projects: [
     {
+      name: "MoneyRank",
+      role: "Founder & Builder",
+      description:
+        "Architected and developed a consumer-facing platform enabling users to evaluate and rank financial decisions (investing, debt management, insurance, housing) through interactive daily scenarios. Engineered sophisticated scoring algorithms, percentile ranking systems, and risk-grading mechanisms that provide instant, actionable feedback on decision quality and risk assessment capabilities. Launched with open access architecture and implemented optional user accounts featuring progress tracking, advanced analytics dashboards, and engagement streaks. Tech: React, TypeScript, Node.js, Supabase/Postgres, Authentication, Analytics.",
+    },
+    {
       name: "Elite Express",
       role: "Founder & Developer",
       description:
