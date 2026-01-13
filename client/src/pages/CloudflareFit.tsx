@@ -95,7 +95,7 @@ export default function WhyMe() {
     { label: "Time-to-Value Reduction", value: "40%", description: "Through automation and standardization" },
     { label: "Revenue Influenced", value: "$8M+", description: "Renewals and expansions in enterprise sales" },
     { label: "Engineers Mentored", value: "30+", description: "Cross-regional enablement leadership" },
-    { label: "Customer Satisfaction", value: "+25%", description: "Through feedback-driven improvements" },
+    { label: "Technical Cases Resolved", value: "2,000+", description: "Customer issues and technical support" },
   ];
 
   return (
