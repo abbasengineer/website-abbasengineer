@@ -56,8 +56,8 @@ export const resumeData: ResumeData = {
         "Serve as the technical bridge between Sales, Product, and Customer Success, leading pre- and post-sales engagements to scope solutions, deliver tailored demos, and accelerate adoption.",
         "Architect and optimize multi-cloud deployments across AWS, Azure, and GCP, improving visibility and performance for assets secured by Cloudflare proxies, firewalls, and WAFs, while aligning configurations with Zero Trust and SASE best practices.",
         "Develop automation workflows using Python and RESTful APIs to streamline SSO/SAML authentication, enhance telemetry ingestion into Splunk and ServiceNow.",
-        "Collaborate with Security, Network, and Infrastructure teams to analyze and optimize DNS, BGP, and TLS/SSL configurations, ensuring reliability and low latency.",
-        "Lead technical enablement initiatives by creating reusable scripts, documentation, and training materials that reduced client time-to-value by 40%.",
+        "Partner with Sales and Account Management to support $8M+ in renewals and expansions, providing technical validation, integration design, and proof-of-concept support that reduced renewal risk and expanded platform adoption across enterprise customers.",
+        "Lead technical enablement and partner readiness initiatives by creating reusable sample integrations, demos, scripts, and documentation that reduced customer time-to-value by ~40% and scaled technical knowledge across sales and go-to-market teams.",
       ],
     },
     {

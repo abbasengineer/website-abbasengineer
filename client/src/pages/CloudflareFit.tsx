@@ -10,7 +10,7 @@ export default function WhyMe() {
     {
       icon: Target,
       title: "Results-Driven",
-      description: "I measure success by impact, not activity. Whether it's reducing time-to-value by 40% or influencing $4M+ in revenue, I focus on metrics that matter to the business. Every project starts with 'What problem are we solving?' and ends with 'How do we measure success?'",
+      description: "I measure success by impact, not activity. Whether it's reducing time-to-value by 40% or influencing $8M+ in revenue, I focus on metrics that matter to the business. Every project starts with 'What problem are we solving?' and ends with 'How do we measure success?'",
     },
     {
       icon: Brain,
@@ -93,7 +93,7 @@ export default function WhyMe() {
 
   const metrics = [
     { label: "Time-to-Value Reduction", value: "40%", description: "Through automation and standardization" },
-    { label: "Revenue Influenced", value: "$4M+", description: "Net-new business in enterprise sales" },
+    { label: "Revenue Influenced", value: "$8M+", description: "Renewals and expansions in enterprise sales" },
     { label: "Engineers Mentored", value: "30+", description: "Cross-regional enablement leadership" },
     { label: "Customer Satisfaction", value: "+25%", description: "Through feedback-driven improvements" },
   ];
@@ -121,7 +121,7 @@ export default function WhyMe() {
       </motion.div>
 
       {/* Metrics Bar */}
-      <motion.div
+      <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
@@ -144,22 +144,22 @@ export default function WhyMe() {
         <div className="grid md:grid-cols-2 gap-6">
           {coreValues.map((value, index) => {
             const Icon = value.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + (index * 0.1) }}
-              >
-                <Card className="h-full bg-white/5 border-white/10 hover:border-primary/50 transition-colors group">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                      <Icon className="w-6 h-6" />
-                    </div>
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + (index * 0.1) }}
+            >
+              <Card className="h-full bg-white/5 border-white/10 hover:border-primary/50 transition-colors group">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                    <Icon className="w-6 h-6" />
+                  </div>
                     <CardTitle className="text-xl font-bold text-white">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">
                       {value.description}
                     </p>
                   </CardContent>
@@ -193,12 +193,12 @@ export default function WhyMe() {
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed text-sm">
                       {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          );
+        })}
         </div>
       </div>
 
@@ -257,8 +257,8 @@ export default function WhyMe() {
                 <p className="text-primary font-medium mb-1">{moneyRankProject.tagline} • {moneyRankProject.period}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-3 max-w-2xl">
                   {moneyRankProject.story}
-                </p>
-              </div>
+            </p>
+          </div>
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -277,12 +277,12 @@ export default function WhyMe() {
               <p className="text-sm text-muted-foreground italic mb-4">{moneyRankProject.whyItMatters}</p>
               <div className="flex flex-wrap gap-2">
                 {moneyRankProject.tech.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="px-3 py-1.5 text-sm bg-black/40 hover:bg-primary hover:text-white transition-colors border border-white/5">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </div>
+              <Badge key={tech} variant="secondary" className="px-3 py-1.5 text-sm bg-black/40 hover:bg-primary hover:text-white transition-colors border border-white/5">
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </div>
           </CardContent>
         </Card>
       </motion.div>
