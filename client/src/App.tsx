@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Layout from "@/components/Layout";
 import Resume from "@/pages/Resume";
-import WhyMe from "@/pages/CloudflareFit";
+import WhyMe from "@/pages/aboutme";
 
 function Router() {
   return (
