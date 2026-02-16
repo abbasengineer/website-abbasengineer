@@ -74,16 +74,27 @@ export default function Resume() {
                     <ChevronRight className="w-3.5 h-3.5 text-muted-foreground shrink-0" aria-hidden />
                   </Button>
                 ) : (
-                  <motion.a
-                    href={`tel:${resumeData.contact.phone}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="flex items-center gap-2 border-l border-white/20 bg-transparent hover:bg-white/10 text-foreground no-underline pl-2 pr-3 h-9 text-sm font-medium whitespace-nowrap"
-                  >
-                    <Phone className="w-4 h-4 shrink-0 text-primary" aria-hidden />
-                    <ChevronRight className="w-3.5 h-3.5 text-primary shrink-0" aria-hidden />
-                    <span>{resumeData.contact.phone}</span>
-                  </motion.a>
+                  <>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      type="button"
+                      className="gap-1 border-0 rounded-none hover:bg-white/10 hover:text-white h-9 px-2.5 min-w-0"
+                      onClick={() => setPhoneRevealed(false)}
+                      title="Click to hide phone number"
+                    >
+                      <Phone className="w-4 h-4 shrink-0 text-primary" aria-hidden />
+                    </Button>
+                    <motion.a
+                      href={`tel:${resumeData.contact.phone}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="flex items-center gap-2 border-l border-white/20 bg-transparent hover:bg-white/10 text-foreground no-underline pl-2 pr-3 h-9 text-sm font-medium whitespace-nowrap"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5 text-primary shrink-0" aria-hidden />
+                      <span>{resumeData.contact.phone}</span>
+                    </motion.a>
+                  </>
                 )}
               </motion.div>
               <Button variant="outline" size="sm" className="gap-2 border-white/20 hover:bg-white/10 hover:text-white" asChild>
