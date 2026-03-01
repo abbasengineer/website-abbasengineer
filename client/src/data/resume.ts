@@ -95,8 +95,8 @@ export const resumeData: ResumeData = {
       url: "https://moneyrank.onrender.com",
     },
     {
-      name: "Elite Express",
-      role: "Founder & Developer",
+      name: "Car Wash App",
+      role: "Developer",
       description:
         "• React Native app that digitized car wash operations, transforming manual processes into automated platform\n• Enabled direct customer interaction, service purchases, and account management\n• Implemented subscriptions, promotions, push notifications, and admin dashboard\n• Use Cursor for prototyping and debugging\n• Resulted in 30% increase in user engagement",
     },
