@@ -35,6 +35,7 @@ export interface ResumeData {
   skills: {
     languages: string[];
     frameworks: string[];
+    aiAndTooling: string[];
   };
 }
 
@@ -58,6 +59,7 @@ export const resumeData: ResumeData = {
         "Develop automation workflows using Python and RESTful APIs to streamline SSO/SAML authentication, enhance telemetry ingestion into Splunk and ServiceNow.",
         "Partner with Sales and Account Management to support $8M+ in renewals and expansions, providing technical validation, integration design, and proof-of-concept support that reduced renewal risk and expanded platform adoption across enterprise customers.",
         "Lead technical enablement and partner readiness initiatives by creating reusable sample integrations, demos, scripts, and documentation that reduced customer time-to-value by ~40% and scaled technical knowledge across sales and go-to-market teams.",
+        "Designed and deployed internal LLM assistants using document-constrained RAG with citation enforcement and hallucination guardrails; contributed to an MCP server layer for structured tool invocation and secure integration between LLM workflows and internal systems.",
       ],
     },
     {
@@ -70,6 +72,7 @@ export const resumeData: ResumeData = {
         "Served as trusted pre-sales and post-sales technical advisor, guiding security executives on adoption of AI-powered threat detection, influencing $4M+ in net-new business.",
         "Led cross-regional enablement for Attack Surface Management (ASM) product as Subject Matter Expert, mentoring 30+ engineers.",
         "Translated client feedback into actionable product improvements, driving roadmap updates and improving customer satisfaction by 25%.",
+        "Led technical evaluations and proof-of-concepts for AI-driven platforms; mapped model outputs to production-ready API and SIEM integrations, contributing to $5M+ in new and expansion ARR.",
       ],
     },
     {
@@ -88,20 +91,20 @@ export const resumeData: ResumeData = {
       name: "MoneyRank",
       role: "Founder & Builder",
       description:
-        "• Consumer finance decision platform enabling users to evaluate and rank financial decisions (investing, debt, insurance, housing) through daily scenarios\n• Engineered scoring algorithms, percentile rankings, and risk-grading systems for instant feedback\n• Launched with open access and optional accounts featuring progress tracking, analytics dashboards, and engagement streaks\n• Tech: React, TypeScript, Node.js, Supabase/Postgres, Authentication, Analytics",
+        "• Consumer finance decision platform enabling users to evaluate and rank financial decisions (investing, debt, insurance, housing) through daily scenarios\n• Engineered scoring algorithms, percentile rankings, and risk-grading systems for instant feedback\n• Launched with open access and optional accounts featuring progress tracking, analytics dashboards, and engagement streaks\n• Use Cursor for prototyping and debugging\n• Tech: React, TypeScript, Node.js, Supabase/Postgres, Authentication, Analytics",
       url: "https://moneyrank.onrender.com",
     },
     {
       name: "Elite Express",
       role: "Founder & Developer",
       description:
-        "• React Native app that digitized car wash operations, transforming manual processes into automated platform\n• Enabled direct customer interaction, service purchases, and account management\n• Implemented subscriptions, promotions, push notifications, and admin dashboard\n• Resulted in 30% increase in user engagement",
+        "• React Native app that digitized car wash operations, transforming manual processes into automated platform\n• Enabled direct customer interaction, service purchases, and account management\n• Implemented subscriptions, promotions, push notifications, and admin dashboard\n• Use Cursor for prototyping and debugging\n• Resulted in 30% increase in user engagement",
     },
     {
       name: "QueuedUp",
       role: "Product Manager & Engineer",
       description:
-        "• Reddit-style social networking platform for UCSC students with posts, threads, and campus-specific groups\n• Managed 4-person cross-functional team using Agile, overseeing feature prioritization and technical architecture\n• Built authentication, real-time posts, threaded discussions, and group management\n• Tech: ReactJS, Redux, Firebase",
+        "• Reddit-style social networking platform for UCSC students with posts, threads, and campus-specific groups\n• Managed 4-person cross-functional team using Agile, overseeing feature prioritization and technical architecture\n• Built authentication, real-time posts, threaded discussions, and group management\n• Use Cursor for prototyping and debugging\n• Tech: ReactJS, Redux, Firebase",
     },
   ],
   education: [
@@ -122,8 +125,13 @@ export const resumeData: ResumeData = {
       "Docker",
       "Terraform",
       "MySQL",
+    ],
+    aiAndTooling: [
       "Cursor",
       "Replit",
+      "RAG / LLM workflows",
+      "MCP (Model Context Protocol)",
+      "Structured prompting",
     ],
   },
 };

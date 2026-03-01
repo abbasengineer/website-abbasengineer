@@ -257,6 +257,17 @@ export default function Resume() {
                   ))}
                 </div>
               </div>
+
+              <div>
+                <h4 className="text-sm font-medium text-muted-foreground mb-3 uppercase tracking-wider text-xs">AI & development tools</h4>
+                <div className="flex flex-wrap gap-2">
+                  {resumeData.skills.aiAndTooling.map((skill) => (
+                    <Badge key={skill} variant="outline" className="border-primary/30 text-primary hover:border-primary/50 hover:text-primary">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.section>
 
