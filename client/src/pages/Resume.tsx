@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
-import { Github, Linkedin, Mail, Phone, ExternalLink, Download, ChevronRight } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,7 +12,6 @@ import securityImg from "@assets/generated_images/abstract_visualization_of_cybe
 import mobileImg from "@assets/generated_images/abstract_representation_of_mobile_app_development_and_coding.png";
 
 export default function Resume() {
-  const [phoneRevealed, setPhoneRevealed] = useState(false);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,46 +55,6 @@ export default function Resume() {
                   <Mail className="w-4 h-4" /> {resumeData.contact.email}
                 </a>
               </Button>
-              <motion.div
-                className="flex overflow-hidden rounded-md border border-white/20 items-stretch"
-                animate={{ width: phoneRevealed ? "auto" : 56 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              >
-                {!phoneRevealed ? (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="gap-1 border-0 rounded-none hover:bg-white/10 hover:text-white h-9 px-2.5 min-w-0"
-                    onClick={() => setPhoneRevealed(true)}
-                    title="Click to reveal phone number"
-                  >
-                    <Phone className="w-4 h-4 shrink-0" />
-                    <ChevronRight className="w-3.5 h-3.5 text-muted-foreground shrink-0" aria-hidden />
-                  </Button>
-                ) : (
-                  <>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      type="button"
-                      className="gap-1 border-0 rounded-none hover:bg-white/10 hover:text-white h-9 px-2.5 min-w-0"
-                      onClick={() => setPhoneRevealed(false)}
-                      title="Click to hide phone number"
-                    >
-                      <Phone className="w-4 h-4 shrink-0 text-primary" aria-hidden />
-                    </Button>
-                    <motion.a
-                      href={`tel:${resumeData.contact.phone}`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="flex items-center gap-2 border-l border-white/20 bg-transparent hover:bg-white/10 text-foreground no-underline pl-2 pr-3 h-9 text-sm font-medium whitespace-nowrap"
-                    >
-                      <ChevronRight className="w-3.5 h-3.5 text-primary shrink-0" aria-hidden />
-                      <span>{resumeData.contact.phone}</span>
-                    </motion.a>
-                  </>
-                )}
-              </motion.div>
               <Button variant="outline" size="sm" className="gap-2 border-white/20 hover:bg-white/10 hover:text-white" asChild>
                 <a href={`https://${resumeData.contact.linkedin}`} target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-4 h-4" /> LinkedIn

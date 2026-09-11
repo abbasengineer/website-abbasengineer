@@ -1,5 +1,3 @@
-import { LucideIcon, Mail, Phone, Linkedin, Github, Globe } from "lucide-react";
-
 export interface Experience {
   company: string;
   role: string;
@@ -25,7 +23,6 @@ export interface Education {
 export interface ResumeData {
   name: string;
   contact: {
-    phone: string;
     email: string;
     linkedin: string;
     github: string;
@@ -43,7 +40,6 @@ export interface ResumeData {
 export const resumeData: ResumeData = {
   name: "Abbas Engineer",
   contact: {
-    phone: "+1-818-912-0166",
     email: "abbas@abbasengineer.com",
     linkedin: "www.linkedin.com/in/abbas-engineer-b53799125/",
     github: "github.com/abbasengineer",
