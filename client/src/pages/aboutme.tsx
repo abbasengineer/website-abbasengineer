@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Target, Lightbulb, TrendingUp, Rocket, Heart, Code2, BarChart3, Brain, Sparkles } from "lucide-react";
+import CartoonCard from "@/components/CartoonCard";
 
 import networkImg from "@assets/generated_images/global_network_visualization_with_cloudflare_inspired_orange_accents.png";
 
@@ -10,7 +11,7 @@ export default function WhyMe() {
     {
       icon: Target,
       title: "Results-Driven",
-      description: "I measure success by impact, not activity. Whether it's reducing time-to-value by 40% or influencing $8M+ in revenue, I focus on metrics that matter to the business. Every project starts with 'What problem are we solving?' and ends with 'How do we measure success?'",
+      description: "I measure success by impact, not activity. Whether it's supporting a $20M+ enterprise book of business or cutting customer time-to-value by 40%, I focus on metrics that matter to the business. Every project starts with 'What problem are we solving?' and ends with 'How do we measure success?'",
     },
     {
       icon: Brain,
@@ -20,7 +21,7 @@ export default function WhyMe() {
     {
       icon: Sparkles,
       title: "AI-Augmented Development",
-      description: "I leverage AI tools like Cursor and modern AI coding assistants to accelerate development while maintaining code quality. I've integrated AI into my workflow to automate repetitive tasks, generate boilerplate code, and enhance problem-solving—not as a crutch, but as a force multiplier that lets me focus on architecture and innovation.",
+      description: "I leverage modern AI coding assistants and LLM workflows to accelerate development while maintaining code quality. I've integrated AI into my workflow to automate repetitive tasks, generate boilerplate code, and enhance problem-solving—not as a crutch, but as a force multiplier that lets me focus on architecture and innovation.",
     },
     {
       icon: Lightbulb,
@@ -92,10 +93,10 @@ export default function WhyMe() {
   };
 
   const metrics = [
-    { label: "Time-to-Value Reduction", value: "40%", description: "Through automation and standardization" },
-    { label: "Revenue Influenced", value: "$8M+", description: "Renewals and expansions in enterprise sales" },
+    { label: "Enterprise Book of Business", value: "$20M+", description: "Renewals, expansions, and net-new ARR across strategic accounts" },
+    { label: "Enterprise Security & CS", value: "5+ Years", description: "Pre-sales, customer success, and integration engineering" },
     { label: "Engineers Mentored", value: "30+", description: "Cross-regional enablement leadership" },
-    { label: "Technical Cases Resolved", value: "2,000+", description: "Customer issues and technical support" },
+    { label: "Customer Time-to-Value", value: "40% Faster", description: "Through automation and standardized deployments" },
   ];
 
   return (
@@ -113,33 +114,41 @@ export default function WhyMe() {
           Why <span className="text-primary">Me</span>?
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          I'm not just an engineer who can code. I'm a 
-          <span className="text-white font-medium"> problem-solver</span> who builds systems, 
-          a <span className="text-white font-medium">leader</span> who enables teams, and an 
-          <span className="text-white font-medium"> entrepreneur</span> who ships products.
+          I build the{" "}
+          <span className="text-white font-medium">systems, tooling, and processes</span>{" "}
+          that help customers, sales, product, and engineering operate more effectively together.
         </p>
       </motion.div>
 
       {/* Metrics Bar */}
       <motion.div 
+        data-xp-section="metrics"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
         className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
       >
         {metrics.map((metric, index) => (
-          <Card key={index} className="bg-white/5 border-white/10 text-center">
-            <CardContent className="p-6">
-              <div className="text-3xl font-bold text-primary mb-1">{metric.value}</div>
-              <div className="text-sm text-muted-foreground font-medium mb-1">{metric.label}</div>
-              <div className="text-xs text-muted-foreground/70">{metric.description}</div>
-            </CardContent>
-          </Card>
+          <CartoonCard key={index} delay={0.2 + index * 0.08}>
+            <Card className="bg-white/5 border-white/10 border-2 text-center h-full">
+              <CardContent className="p-6">
+                <motion.div
+                  className="text-3xl font-bold text-primary mb-1"
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  {metric.value}
+                </motion.div>
+                <div className="text-sm text-muted-foreground font-medium mb-1">{metric.label}</div>
+                <div className="text-xs text-muted-foreground/70">{metric.description}</div>
+              </CardContent>
+            </Card>
+          </CartoonCard>
         ))}
       </motion.div>
 
       {/* Core Values - What Drives Me */}
-      <div className="mb-16">
+      <div className="mb-16" data-xp-section="core-values">
         <h2 className="text-3xl font-display font-bold text-white mb-8 text-center">What Drives Me</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {coreValues.map((value, index) => {
@@ -171,7 +180,7 @@ export default function WhyMe() {
       </div>
 
       {/* How I Work */}
-      <div className="mb-16">
+      <div className="mb-16" data-xp-section="how-i-work">
         <h2 className="text-3xl font-display font-bold text-white mb-8 text-center">How I Work</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {workStyle.map((item, index) => {
@@ -204,6 +213,7 @@ export default function WhyMe() {
 
       {/* Problem-Solving Examples */}
       <motion.div
+        data-xp-section="problem-solving"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
@@ -236,6 +246,7 @@ export default function WhyMe() {
 
       {/* MoneyRank Project - Featured */}
       <motion.div
+        data-xp-section="moneyrank"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9 }}
@@ -289,6 +300,7 @@ export default function WhyMe() {
 
       {/* Closing Statement */}
       <motion.div
+        data-xp-section="closing"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.0 }}

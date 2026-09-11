@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
-import { Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Download, ChevronRight } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, ExternalLink, Download, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import ExperienceJobCard from "@/components/ExperienceJobCard";
 
 // Import generated images
 import heroBg from "@assets/generated_images/abstract_dark_technology_background_with_network_nodes_and_glowing_orange_data_lines.png";
@@ -128,52 +128,40 @@ export default function Resume() {
               Experience
             </motion.h2>
 
-            <div className="space-y-8">
+            <div className="space-y-4">
               {resumeData.experience.map((job, index) => (
-                <motion.div variants={itemVariants} key={index} className="relative pl-8 border-l border-white/10 group">
-                  <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background group-hover:scale-125 transition-transform" />
-                  
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h3 className="text-xl font-bold text-white">{job.company}</h3>
-                    <span className="text-sm text-muted-foreground font-mono bg-white/5 px-2 py-1 rounded">{job.period}</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-2 mb-4 text-primary/90 font-medium">
-                    <span>{job.role}</span>
-                    <span className="w-1 h-1 bg-white/20 rounded-full" />
-                    <span className="text-sm text-muted-foreground font-normal flex items-center gap-1">
-                      <MapPin className="w-3 h-3" /> {job.location}
-                    </span>
-                  </div>
-
-                  <ul className="space-y-3">
-                    {job.points.map((point, i) => (
-                      <li key={i} className="text-muted-foreground leading-relaxed flex items-start gap-3">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/10 shrink-0" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Decorative images for specific roles */}
-                  {index === 0 && (
-                    <div className="mt-6 rounded-xl overflow-hidden h-32 relative group/img">
-                       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent z-10" />
-                       <img src={securityImg} alt="Security Visualization" className="w-full h-full object-cover opacity-60 group-hover/img:scale-105 transition-transform duration-500" />
-                       <div className="absolute bottom-3 left-4 z-20 text-xs font-mono bg-black/50 backdrop-blur px-2 py-1 rounded text-white/80">
-                         ASM & Cloud Security Architecture
-                       </div>
-                    </div>
-                  )}
-                  {index === 2 && (
-                    <div className="mt-6 rounded-xl overflow-hidden h-32 relative group/img">
-                       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent z-10" />
-                       <img src={mobileImg} alt="Mobile Dev Visualization" className="w-full h-full object-cover opacity-60 group-hover/img:scale-105 transition-transform duration-500" />
-                       <div className="absolute bottom-3 left-4 z-20 text-xs font-mono bg-black/50 backdrop-blur px-2 py-1 rounded text-white/80">
-                         Mobile Engineering & UX
-                       </div>
-                    </div>
-                  )}
+                <motion.div variants={itemVariants} key={index}>
+                  <ExperienceJobCard
+                    job={job}
+                    index={index}
+                    decorativeImage={
+                      index === 0 ? (
+                        <div className="mt-4 rounded-xl overflow-hidden h-32 relative group/img">
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent z-10" />
+                          <img
+                            src={securityImg}
+                            alt="Security Visualization"
+                            className="w-full h-full object-cover opacity-60 group-hover/img:scale-105 transition-transform duration-500"
+                          />
+                          <div className="absolute bottom-3 left-4 z-20 text-xs font-mono bg-black/50 backdrop-blur px-2 py-1 rounded text-white/80">
+                            ASM & Cloud Security Architecture
+                          </div>
+                        </div>
+                      ) : index === 2 ? (
+                        <div className="mt-4 rounded-xl overflow-hidden h-32 relative group/img">
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent z-10" />
+                          <img
+                            src={mobileImg}
+                            alt="Mobile Dev Visualization"
+                            className="w-full h-full object-cover opacity-60 group-hover/img:scale-105 transition-transform duration-500"
+                          />
+                          <div className="absolute bottom-3 left-4 z-20 text-xs font-mono bg-black/50 backdrop-blur px-2 py-1 rounded text-white/80">
+                            Mobile Engineering & UX
+                          </div>
+                        </div>
+                      ) : undefined
+                    }
+                  />
                 </motion.div>
               ))}
             </div>

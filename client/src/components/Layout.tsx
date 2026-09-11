@@ -3,10 +3,15 @@ import { motion } from "framer-motion";
 import { Cloud, FileText, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import FloatingBackground from "@/components/FloatingBackground";
+import MascotCharacter from "@/components/MascotCharacter";
+import XpProgressBar from "@/components/XpProgressBar";
+import { usePortfolioXp } from "@/hooks/usePortfolioXp";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { totalXp, level, levelTitle, xpGainFlash, isWhyMe } = usePortfolioXp(location);
 
   const navItems = [
     { path: "/", label: "Resume", icon: FileText },
@@ -14,11 +19,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-white">
+    <div className="relative min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-white">
+      <FloatingBackground />
+
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="text-xl font-display font-bold flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <span className="text-primary text-2xl">⚡</span>
+          <Link href="/" className="text-xl font-display font-bold flex items-center gap-2 hover:opacity-80 transition-opacity group">
+            <motion.span
+              className="relative flex items-center"
+              whileHover={{ rotate: [0, -10, 10, 0] }}
+              transition={{ duration: 0.5 }}
+            >
+              <MascotCharacter size={36} animate={false} className="hidden sm:block" />
+              <span className="text-primary text-2xl sm:hidden">⚡</span>
+            </motion.span>
             <span className="tracking-tight">Abbas<span className="text-muted-foreground font-light">Engineer</span></span>
           </Link>
 
@@ -83,9 +97,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       </nav>
 
-      <main className="pt-20 pb-12 px-4">
-        {children}
+      <main className="relative z-10 pt-20 pb-24 px-4">
+        <motion.div
+          key={location}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        >
+          {children}
+        </motion.div>
       </main>
+
+      <XpProgressBar
+        totalXp={totalXp}
+        level={level}
+        levelTitle={levelTitle}
+        xpGainFlash={xpGainFlash}
+        isWhyMe={isWhyMe}
+      />
     </div>
   );
 }
